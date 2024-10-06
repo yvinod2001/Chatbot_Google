@@ -44,8 +44,10 @@ def get_vector_store(text_chunks, api_key):
 
 def get_conversational_chain():
     prompt_template = """ As a school admission counselor, your task is to provide accurate and informative answers to the questions posed by students. You should use the provided context to support your answers. If the context does not provide the answer, say "I don't know the answer to that question." and \n\n"""
-    context :\n {context}?\n
-    Question: \n{question} \n
+    context :
+            {context}
+    Question:
+            {question}
 
     Answer:
     
