@@ -43,13 +43,15 @@ def get_vector_store(text_chunks, api_key):
     vector_store.save_local("faiss_index")
 
 def get_conversational_chain():
-    prompt_template = """ As a school admission counselor, your task is to provide accurate and informative answers to the questions posed by students. You should use the provided context to support your answers. If the context does not provide the answer, say "I don't know the answer to that question." and \n\n"""
-    Context :
-            {context}
+    prompt_template = """ As a school admission counselor, your task is to provide accurate and informative answers to the questions posed by students. You should use the provided context to support your answers. If the context does not provide the answer, say "I don't know the answer to that question." and
+    context :
+    {context}
+    
     Question:
-            {question}
+    {question}
 
     Answer:
+    """
     
     model = ChatGoogleGenerativeAI (model="gemini-1.0-pro", google_api_key=api_key, temperature=0.3)
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
